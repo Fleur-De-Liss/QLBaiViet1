@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace QLBaiViet1.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Admin/Home
