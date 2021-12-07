@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
+namespace Models.Dao
 {
-    public class AccountModel
+    public class UserDao
     {
         private QLBaiVietDbContext db = null;
-        public AccountModel()
+        public UserDao()
         {
             db = new QLBaiVietDbContext();
         }

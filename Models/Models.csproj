@@ -53,13 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Framework\Comment.cs" />
     <Compile Include="Framework\Post.cs" />
     <Compile Include="Framework\QLBaiVietDbContext.cs" />
     <Compile Include="Framework\Role.cs" />
     <Compile Include="Framework\sysdiagram.cs" />
     <Compile Include="Framework\User.cs" />
-    <Compile Include="AccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

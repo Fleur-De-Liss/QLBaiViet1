@@ -1,5 +1,4 @@
-﻿using Models;
-using QLBaiViet1.Areas.Admin.Models;
+﻿using QLBaiViet1.Areas.Admin.Models;
 using QLBaiViet1.Areas.Admin.Code;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Models.Dao;
 
 namespace QLBaiViet1.Areas.Admin.Controllers
 {
@@ -22,7 +22,7 @@ namespace QLBaiViet1.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel loginModel)
         {
-            var res = new AccountModel().Login(loginModel.Username, loginModel.Password);
+            var res = new UserDao().Login(loginModel.Username, loginModel.Password);
             if (res && ModelState.IsValid)
             {
                 SessionHelper.SetSession(new UserSession() { Username = loginModel.Username });
