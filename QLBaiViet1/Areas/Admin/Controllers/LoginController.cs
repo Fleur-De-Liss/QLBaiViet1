@@ -22,9 +22,10 @@ namespace QLBaiViet1.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(LoginModel loginModel)
         {
-            if (Membership.ValidateUser(loginModel.Username, loginModel.Password) && ModelState.IsValid)
+            var res = new AccountModel().Login(loginModel.Username, loginModel.Password);
+            if (res && ModelState.IsValid)
             {
-                FormsAuthentication.SetAuthCookie(loginModel.Username, loginModel.RememberMe);
+                SessionHelper.SetSession(new UserSession() { Username = loginModel.Username });
                 return RedirectToAction("Index", "Home");
             }
             else
